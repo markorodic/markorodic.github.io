@@ -8,22 +8,22 @@ window.onload = function() {
 
     const content = document.getElementById('content')
 
-    let counter = 0
+    var counter = 0
 
-    let intervalStop = setInterval(function(){
+    var intervalStop = setInterval(function(){
         counter++
   
-        let newArticle = content.getElementsByTagName('article')[0].cloneNode(true)
+        var newArticle = content.getElementsByTagName('article')[0].cloneNode(true)
   
         // set new attributes
-        let newImage = newArticle.getElementsByTagName('img')
+        var newImage = newArticle.getElementsByTagName('img')
         
         newImage[0].src = "https://en.gravatar.com/userimage/18343163/3fd908393aedf6423ec12cacec9a1f50.jpg?size=200"
   
-        let newHeader = newArticle.getElementsByTagName('h4')
+        var newHeader = newArticle.getElementsByTagName('h4')
         newHeader[0].innerHTML = "Me"
   
-        let newPara = newArticle.getElementsByTagName('p')
+        var newPara = newArticle.getElementsByTagName('p')
         newPara[0].innerHTML = "Got it to work"
   
         // append it
