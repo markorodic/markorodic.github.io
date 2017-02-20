@@ -57,3 +57,12 @@ h4 {
   margin-bottom: 30px;
   font-weight: 900;
 }
+
+@media screen and (max-width: 450px) {
+
+    .header { 
+    }
+    
+    article {
+    }
+}

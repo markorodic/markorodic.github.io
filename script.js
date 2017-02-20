@@ -6,14 +6,14 @@ const users = [
 
 window.onload = function() {
 
-    let div = document.getElementById('content')
+    const content = document.getElementById('content')
 
     let counter = 0
 
     let intervalStop = setInterval(function(){
         counter++
   
-        let newArticle = div.getElementsByTagName('article')[0].cloneNode(true)
+        let newArticle = content.getElementsByTagName('article')[0].cloneNode(true)
   
         // set new attributes
         let newImage = newArticle.getElementsByTagName('img')
@@ -27,8 +27,8 @@ window.onload = function() {
         newPara[0].innerHTML = "Got it to work"
   
         // append it
-        div.appendChild(newArticle)
-        div.scrollIntoView(false);
+        content.appendChild(newArticle)
+        content.scrollIntoView(false);
   
         if (counter == 5) {
             clearInterval(intervalStop)
