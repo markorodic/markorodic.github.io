@@ -1,8 +1,3 @@
-const users = [
-    { name: "fabulouskitten", img: "./img/1 (1).jpg" },
-    { name: "stomper", img: "./img/1.jpg" },
-    { name: "junglejess", img: "./img/6 (1).jpg" }
-]
 
 window.onload = function() {
 
@@ -13,18 +8,20 @@ window.onload = function() {
     var intervalStop = setInterval(function(){
         counter++
   
+        let userNumber = Math.floor(Math.random() * 80)
+        let commentNumber = Math.floor(Math.random() * 152)
+
         var newArticle = content.getElementsByTagName('article')[0].cloneNode(true)
   
         // set new attributes
         var newImage = newArticle.getElementsByTagName('img')
-        
-        newImage[0].src = "https://en.gravatar.com/userimage/18343163/3fd908393aedf6423ec12cacec9a1f50.jpg?size=200"
+        newImage[0].src = "users[userNumber].img"
   
         var newHeader = newArticle.getElementsByTagName('h4')
-        newHeader[0].innerHTML = "Me"
+        newHeader[0].innerHTML = "users[userNumber].name"
   
         var newPara = newArticle.getElementsByTagName('p')
-        newPara[0].innerHTML = "Got it to work"
+        newPara[0].innerHTML = "comments[commentNumber]"
   
         // append it
         content.appendChild(newArticle)
