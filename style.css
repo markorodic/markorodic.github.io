@@ -75,10 +75,11 @@ header {
 }
 
 .profile-pic {
-        margin: 35px 0px 0px 16px;
-        width: 35px;
-        height: 35px;
+        margin: 36px 0px 0px 16px;
+        width: 9%;
+        height: 9%;
         border-radius: 100%;
+        /*object-fit: contain;*/
 }
 
 .comment {
@@ -103,8 +104,8 @@ h4 {
 
 @media screen and (max-width: 450px) {
 overflow-x:scroll;
-
+/*
 .profile-pic {
-        height: 35px;
-        weight: 35px;
-}
+        height: 40px;
+        width: 40px;
+}*/
