@@ -188,8 +188,13 @@ window.onload = function() {
     //comments load
     var intervalStop = setInterval(function(){
 
+        //clone the current article element
         var newArticle = content.getElementsByTagName('article')[0].cloneNode(true)
-  
+
+        //create a variable time
+        var time
+        count === 0 ? time = 5 : time = (count+1) * 5 + Math.floor((Math.random()+1) * 5 - 8)
+
         // set new attributes
         var newImage = newArticle.getElementsByTagName('img')
         newImage[0].src = data[count].image
@@ -200,9 +205,11 @@ window.onload = function() {
         var newPara = newArticle.getElementsByTagName('p')
         newPara[0].innerHTML = data[count].comment
 
-	var newTime = newArticle.getElementsByTagName('h4')
-        newTime[0].innerHTML = "3 secs"
-  
+	   var newTime = newArticle.getElementsByTagName('h4')
+        console.log(count, time)
+        newTime[0].innerHTML = time + (time < 61 ? " secs" : " mins")
+        count++
+
         // append it
         content.appendChild(newArticle)
         content.scrollIntoView(false);
@@ -211,7 +218,6 @@ window.onload = function() {
             clearInterval(intervalStop)
         }
 
-	count++
     }, 5000)
 }
 
