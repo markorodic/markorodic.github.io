@@ -167,10 +167,25 @@ var data = [
 
 window.onload = function() {
 
+    //timer
+    var seconds = document.getElementById('seconds')
+    var minutes = document.getElementById('minutes')
+    var num = 0
+    seconds.innerHTML = num.toString().length < 2 ? "0" + num : num
+
+    setInterval(function(){
+      num++
+      let mins = Math.floor(num/60)
+      let secs = num % 60
+      seconds.innerHTML = secs.toString().length < 2 ? "0" + secs : secs
+        minutes.innerHTML = mins.toString().length < 2 ? "0" + mins : mins
+    }, 1000)
+
     const content = document.getElementById('content')
 
     var count = 0
 
+    //comments load
     var intervalStop = setInterval(function(){
 
         var newArticle = content.getElementsByTagName('article')[0].cloneNode(true)
@@ -199,4 +214,5 @@ window.onload = function() {
 	count++
     }, 5000)
 }
+
 
