@@ -214,7 +214,7 @@ window.onload = function() {
         content.appendChild(newArticle)
         content.scrollIntoView(false);
   
-        if (count == 28) {
+        if (count == 128) {
             clearInterval(intervalStop)
         }
 
