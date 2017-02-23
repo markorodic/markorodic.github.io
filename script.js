@@ -175,8 +175,8 @@ window.onload = function() {
 
     setInterval(function(){
       num++
-      let mins = Math.floor(num/60)
-      let secs = num % 60
+      var mins = Math.floor(num/60)
+      var secs = num % 60
       seconds.innerHTML = secs.toString().length < 2 ? "0" + secs : secs
         minutes.innerHTML = mins.toString().length < 2 ? "0" + mins : mins
     }, 1000)
