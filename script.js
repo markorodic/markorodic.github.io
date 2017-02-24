@@ -124,49 +124,11 @@ var data = [
     { name: "sideguyline", image: "./img/92.jpg", comment: "This big dude is Paperboy right?" },
     { name: "tensepockets", image: "./img/93.jpg", comment: "Did he just say his daughter!" },
     { name: "preystation", image: "./img/57 (1).jpg", comment: "Good point!" },
-    { name: "ficklepixel", image: "./img/66 (1).jpg", comment: "Earn is smart oh yea. Don't test him." },
-    { name: "sodcloth", image: "./img/90 (1).jpg", comment: "" },
-    { name: "sketchycamper", image: "./img/89 (1).jpg", comment: "" },
-    { name: "whatevdev", image: "./img/88 (1).jpg", comment: "" },
-    { name: "indiaandyjones", image: "58.jpg", comment: "" },
-    { name: "mrwhite", image: "./img/89.jpg", comment: "" },
-    { name: "jimmytwotimes", image: "./img/56.jpg", comment: "" },
-    { name: "blackmamba", image: "./img/50 (1).jpg", comment: "" },
-    { name: "vincentvega", image: "./img/57.jpg", comment: "" },
-    { name: "marcelluswallace", image: "./img/55.jpg", comment: "" },
-    { name: "fabulouskitten", image: "./img/1 (1).jpg", comment: "" },
-    { name: "stomper", image: "./img/1.jpg", comment: "" },
-    { name: "daniel72", image: "./img/3.jpg", comment: "" },
-    { name: "junglejess", image: "./img/6 (1).jpg", comment: "" },
-    { name: "silvaboi", image: "./img/2.jpg", comment: "" },
-    { name: "benjib", image: "./img/5.jpg", comment: "" },
-    { name: "craig", image: "./img/6.jpg", comment: "" },
-    { name: "mrmarkorodic", image: "./img/32.jpg", comment: "" },
-    { name: "kukuarthur", image: "./img/16.jpg", comment: "" },
-    { name: "katievorgan", image: "./img/19 (1).jpg", comment: "" },
-    { name: "stephenro", image: "./img/5 (1).jpg", comment: "" },
-    { name: "natashauni", image: "./img/7 (1).jpg", comment: "" },
-    { name: "simonpmorgan", image: "./img/9.jpg", comment: "" },
-    { name: "anniemac", image: "./img/11 (1).jpg", comment: "" },
-    { name: "thebride", image: "./img/13 (1).jpg", comment: "" },
-    { name: "driver", image: "./img/17.jpg", comment: "" },
-    { name: "bill", image: "./img/22.jpg", comment: "" },
-    { name: "sethgecko", image: "./img/20.jpg", comment: "" },
-    { name: "fredrickzoller", image: "./img/12.jpg", comment: "" },
-    { name: "hattorihanzo", image: "./img/18 (1).jpg", comment: "" },
-    { name: "aldorainer", image: "./img/30.jpg", comment: "" },
-    { name: "hanslanda", image: "./img/45.jpg", comment: "" },
-    { name: "miawallace", image: "./img/17 (1).jpg", comment: "" },
-    { name: "mrorange", image: "./img/27 (1).jpg", comment: "" },
-    { name: "jackiebrown", image: "./img/31 (1).jpg", comment: "" },
-    { name: "beatrixkiddo", image: "./img/21 (1).jpg", comment: "" },
-    { name: "jules", image: "./img/35 (1).jpg", comment: "" },
-    { name: "henryhill", image: "./img/34.jpg", comment: "" }
+    { name: "ficklepixel", image: "./img/66 (1).jpg", comment: "Earn is smart oh yea. Don't test him." }
 ]
 
-window.onload = function() {
-
-    //timer
+window.onload = function(){
+	//timer
     var seconds = document.getElementById('seconds')
     var minutes = document.getElementById('minutes')
     var num = 0
@@ -180,12 +142,8 @@ window.onload = function() {
         minutes.innerHTML = mins.toString().length < 2 ? "0" + mins : mins
     }, 1000)
 
-    const content = document.getElementById('content')
-
-    var count = 0
-
     //progress on the header
-    var bar = document.getElementById("myBar")   
+    var bar = document.getElementById("my-bar")   
     var width = 0
     var id = setInterval(frame, 10)
     function frame() {
@@ -197,39 +155,37 @@ window.onload = function() {
         }
     }
 
-    //comments load
-    var intervalStop = setInterval(function(){
+    //click to like
+    document.getElementById("like").addEventListener("click", likeButton)
 
-        //clone the current article element
-        var newArticle = content.getElementsByTagName('article')[0].cloneNode(true)
+	function likeButton() {
+    	document.getElementById("like").src = "./img/heart2.png"
+	}
 
-        //create a variable time
-        var time
-        count === 0 ? time = 5 : time = (count+1) * 5 + Math.floor((Math.random()+1) * 5 - 8)
+	//commenting
+	document.getElementById('comment').addEventListener("click", commentButton)
 
-        // set new attributes
-        var newImage = newArticle.getElementsByTagName('img')
-        newImage[0].src = data[count].image
-  
-        var newHeader = newArticle.getElementsByTagName('h3')
-        newHeader[0].innerHTML = data[count].name
-  
-        var newPara = newArticle.getElementsByTagName('p')
-        newPara[0].innerHTML = data[count].comment
+	function commentButton() {
+	}
 
-	   var newTime = newArticle.getElementsByTagName('h4')
-        newTime[0].innerHTML = time + (time < 61 ? " secs" : " mins")
-        count++
+	//see next comment
+	document.getElementById("change-comment").addEventListener("click", myFunction)
 
-        // append it
-        content.appendChild(newArticle)
-        content.scrollIntoView(false);
-  
-        if (count == 126) {
-            clearInterval(intervalStop)
-        }
+	var count = 0
 
-    }, 5000)
+	function myFunction() {
+    	var commentSection = document.getElementById("comment")
+
+    	//comment
+    	commentSection.getElementsByTagName('p')[0].innerHTML = data[count].comment
+
+    	//image
+    	document.getElementById('profile').src = data[count].image
+
+    	//name
+    	document.getElementById('user').innerHTML = data[count].name
+
+    	//time
+	count++
+	}
 }
-
-
