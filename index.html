@@ -4,45 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0"">
     <title></title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="./style.css" rel="stylesheet" type="text/css">
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-
-    <header>
-        <img id="logo" src="./img/reel3.png">
-        <div id='container'>
-            <h5>Atlanta: Episode 1 - The Big Bang</h5>
-            <div id='timer'>
-                <span id='minutes'>00</span>
-                <span id='colon'>:</span>
-                <span id='seconds'>00</span>
+    <img id='background-image' src="./img/atlanta_cover.jpg">
+    <div class='header'>
+        <h5>Atlanta: Episode 1 - The Big Bang</h5>
+        <div id='timer'>
+            <span id='minutes'>00</span>
+            <span id='colon'>:</span>
+            <span id='seconds'>00</span>
+        </div>
+        <div id="bg-bar">
+            <div id="my-bar"></div>
+        </div>
+    </div>
+    <div id='main-container'>
+        <div id="comment">
+            <img id="like" src="./img/heart.svg">
+            <p id="change-comment">About to start!</p>
+            <div class="user">
+                <img id="profile" src="./img/35.jpg">
+                <h4 id="user">yappygirl</h4>
+                <h4 class="time">53 secs</h4>
             </div>
         </div>
-    </header>
-
-    <div id='content'>
-        <div class="title-image">
-            <img id="title-photo" src="./img/atlanta.jpg">
-            <div class="flex">
-                <img id="title" src="./img/title-card.png">
-                <p>152 comments</p>
-            </div>
+        <div class="footer">
+            <img src="./img/plus.svg">
+            <img id="swipe" src="./img/caret right.svg">
         </div>
-        <article>
-            <div class="flex-main">
-                <img class='profile-pic' src="" alt="">                
-                <div class='comment'>
-                    <h3></h3>
-                    <p></p>
-                    <h4></h4>
-                    <div class='line'></div>
-                </div>
-            </div>
-        </article>
     </div>
 </body>
 </html>
