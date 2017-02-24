@@ -10,13 +10,22 @@ body {
 
 header {
   height: 48px;
+  width: 100%;
   background: #5fcde2;
   position: fixed;
-  width: 100%;
   top: 0px;
   //padding: 0px 10px 35px 68px;
   box-shadow: -1px 3px 7px rgba(0, 0, 0, 0.15);
   z-index: 99;
+}
+
+#myBar {
+  height: 48px;
+  width: 30%;
+  background: #2ac5dd;
+  position: fixed;
+  z-index: -1;
+  border-right: thin solid #25b1c6;
 }
 
 #logo {
