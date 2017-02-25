@@ -163,29 +163,104 @@ window.onload = function(){
 	}
 
 	//commenting
-	document.getElementById('comment').addEventListener("click", commentButton)
+	document.getElementById('add-comment').addEventListener("click", commentButton)
 
 	function commentButton() {
+
+        clearInterval(intervalStop)
+
+        var commentSection = document.getElementById("comment")
+
+        //comment
+        commentSection.getElementsByTagName('p')[0].style.display = 'none'
+
+        var commentField = document.createElement("input")
+        commentField.setAttribute('type', 'text')
+        commentField.setAttribute('placeholder', 'Write something')
+        commentField.style.margin = "90px 30px 0px 20px"
+        commentField.style.fontSize = "37px"
+        commentField.style.fontWeight = "200"
+        commentField.style.color = "white"
+        commentField.style.background = "transparent"
+        commentField.style.border = "none"
+        commentField.style.borderBottom = "solid 3px white"
+        document.getElementById("comment").appendChild(commentField);
+
+        //image
+        // document.getElementById('profile').style.display = 'none'
+        document.getElementById('profile').style.position = "absolute"
+        document.getElementById('profile').style.marginTop = "90px"
+        document.getElementById('profile').style.width = "30px"
+        document.getElementById('profile').style.marginLeft = "20px"
+
+        //name
+        document.getElementById('time').style.position = "absolute"
+        document.getElementById('time').style.marginTop = "90px"
+        document.getElementById('time').style.marginLeft = "60px"
+        document.getElementById('time').style.opacity = "1"
+
+        //time
+        document.getElementById('username').innerHTML = ""
+
+        //heart
+        document.getElementById('like').style.display = 'none'
+
 	}
 
 	//see next comment
-	document.getElementById("change-comment").addEventListener("click", myFunction)
+	// document.getElementById("change-comment").addEventListener("click", myFunction)
 
-	var count = 0
+	// var count = 0
 
-	function myFunction() {
-    	var commentSection = document.getElementById("comment")
+	// function myFunction() {
+ //    	var commentSection = document.getElementById("comment")
 
-    	//comment
-    	commentSection.getElementsByTagName('p')[0].innerHTML = data[count].comment
+ //    	//comment
+ //    	commentSection.getElementsByTagName('p')[0].innerHTML = data[count].comment
 
-    	//image
-    	document.getElementById('profile').src = data[count].image
+ //    	//image
+ //    	document.getElementById('profile').src = data[count].image
 
-    	//name
-    	document.getElementById('user').innerHTML = data[count].name
+ //    	//name
+ //    	document.getElementById('username').innerHTML = data[count].name
 
-    	//time
-	count++
-	}
+ //    	//time
+
+ //        //heart
+ //        document.getElementById('like').src = "./img/heart.svg"
+	// count++
+	// }
+
+    var count = 0
+
+    var intervalStop = setInterval(function(){
+
+        var commentSection = document.getElementById("comment")
+
+        //create a variable time
+        var time
+        count === 0 ? time = 5 : time = (count+1) * 5 + Math.floor((Math.random()+1) * 5 - 8)
+
+        //comment
+        commentSection.getElementsByTagName('p')[0].innerHTML = data[count].comment
+
+        //image
+        document.getElementById('profile').src = data[count].image
+
+        //name
+        document.getElementById('username').innerHTML = data[count].name
+
+        //time
+        document.getElementById('time').innerHTML = time + (time < 61 ? " secs" : " mins")
+
+        //heart
+        document.getElementById('like').src = "./img/heart.svg"
+
+        count++
+  
+        if (count == 126) {
+            clearInterval(intervalStop)
+        }
+
+    }, 5000)
 }
