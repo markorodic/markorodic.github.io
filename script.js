@@ -128,7 +128,7 @@ var data = [
 ]
 
 window.onload = function(){
-	//timer
+    //timer
     var seconds = document.getElementById('seconds')
     var minutes = document.getElementById('minutes')
     var num = 0
@@ -158,14 +158,14 @@ window.onload = function(){
     //click to like
     document.getElementById("like").addEventListener("click", likeButton)
 
-	function likeButton() {
-    	document.getElementById("like").src = "./img/heart2.png"
-	}
+    function likeButton() {
+        document.getElementById("like").src = "./img/heart2.png"
+    }
 
-	//commenting
-	document.getElementById('add-comment').addEventListener("click", commentButton)
+    //commenting
+    document.getElementById('add-comment').addEventListener("click", commentButton)
 
-	function commentButton() {
+    function commentButton() {
 
         clearInterval(intervalStop)
 
@@ -205,31 +205,31 @@ window.onload = function(){
         //heart
         document.getElementById('like').style.display = 'none'
 
-	}
+    }
 
-	//see next comment
-	// document.getElementById("change-comment").addEventListener("click", myFunction)
+    //see next comment
+    // document.getElementById("change-comment").addEventListener("click", myFunction)
 
-	// var count = 0
+    // var count = 0
 
-	// function myFunction() {
- //    	var commentSection = document.getElementById("comment")
+    // function myFunction() {
+ //     var commentSection = document.getElementById("comment")
 
- //    	//comment
- //    	commentSection.getElementsByTagName('p')[0].innerHTML = data[count].comment
+ //     //comment
+ //     commentSection.getElementsByTagName('p')[0].innerHTML = data[count].comment
 
- //    	//image
- //    	document.getElementById('profile').src = data[count].image
+ //     //image
+ //     document.getElementById('profile').src = data[count].image
 
- //    	//name
- //    	document.getElementById('username').innerHTML = data[count].name
+ //     //name
+ //     document.getElementById('username').innerHTML = data[count].name
 
- //    	//time
+ //     //time
 
  //        //heart
  //        document.getElementById('like').src = "./img/heart.svg"
-	// count++
-	// }
+    // count++
+    // }
 
     var count = 0
 
